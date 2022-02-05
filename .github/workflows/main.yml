@@ -22,5 +22,17 @@ jobs:
           npm install
           node index.js
         env:
-          SecretId: ${{ secrets.SecretId }}
-          SecretKey: ${{ secrets.SecretKey }}
+          secretId: ${{ secrets.SECRETID }}
+          secretKey: ${{ secrets.SECRETKEY }}
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to Tencent CloudBase
+        uses: TencentCloudBase/cloudbase-action@v2
+        with:
+          secretId: ${{ secrets.SECRETID }}
+          secretKey: ${{ secrets.SECRETKEY }}
+          envId: ${{ secrets.ENVID }}
