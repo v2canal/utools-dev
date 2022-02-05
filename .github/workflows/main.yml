@@ -4,26 +4,6 @@ on:
     branches:
       - master
 jobs:
-  tar:
-    name: Upload zip files
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Making Zip Directory
-        run: sh ./dir.sh
-      - name: Install Node
-        uses: actions/setup-node@v1.4.4
-        with:
-          node-version: "12.x"
-      - name: Change directory and upload files
-        run: |
-          cd .github/scripts
-          npm install
-          node index.js
-        env:
-          secretId: ${{ secrets.SECRETID }}
-          secretKey: ${{ secrets.SECRETKEY }}
   deploy:
     runs-on: ubuntu-latest
     name: deploy
