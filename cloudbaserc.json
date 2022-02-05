@@ -17,7 +17,7 @@
       "server": {
         "use": "@cloudbase/framework-plugin-function",
         "inputs": {
-          "functionRootPath": "/functions",
+          "functionRootPath": "./functions",
           "functions": [
             {
               "name": "helloworld",
