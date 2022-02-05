@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "envId": "utools-1gi8m6w8918a19e9",
+  "envId": "{{envId}}",
   "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
   "functionRoot": "cloudfunctions",
   "framework": {
@@ -11,16 +11,16 @@
         "inputs": {
           "buildCommand": "npm run build",
           "outputPath": "build",
-          "cloudPath": "/utools-dev",
+          "cloudPath": "/utools-dev"
         }
       },
       "server": {
         "use": "@cloudbase/framework-plugin-function",
         "inputs": {
-          "functionRootPath": "functions",
+          "functionRootPath": "/functions",
           "functions": [
             {
-              "name": "hello_world",
+              "name": "helloworld",
               "timeout": 5,
               "envVariables": {},
               "runtime": "Nodejs10.15",
